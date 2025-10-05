@@ -1,0 +1,58 @@
+<div   id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading"></div>
+                            
+                            <!-- Panel de Control - Solo para Admin -->
+                            <a *ngIf="isAdmin" class="nav-link" routerLink="/home">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span style="margin-left: 8px;">Painel de controle</span>
+                            </a>
+
+                            <!-- Sección de Administración - Solo para Admin -->
+                            <div *ngIf="isAdmin">
+                                <div class="sb-sidenav-menu-heading">Administração</div>
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" 
+                                   data-bs-target="#collapseLayouts" aria-expanded="false" 
+                                   aria-controls="collapseLayouts">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-user-shield"></i></div>
+                                    Gestão Admin 
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" 
+                                     data-bs-parent="#sidenavAccordion">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link" routerLink="/registrousers">
+                                            <i class="fas fa-user-plus"></i> Cadastro usuários
+                                        </a>     
+                                    </nav>
+                                </div>
+                            </div>
+
+                            <!-- Sección de Usuarios - Para todos -->
+                            <div class="sb-sidenav-menu-heading">Usuários</div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" 
+                               data-bs-target="#collapseLayoutsuser" aria-expanded="false" 
+                               aria-controls="collapseLayoutsuser">
+                                <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                                Gestão Usuários 
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayoutsuser" aria-labelledby="headingOne" 
+                                 data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" routerLink="/registrofeedback">
+                                        <i class="fas fa-robot"></i> Consulta IA
+                                    </a>
+                                    <!-- Histórico - Solo para Admin por ahora -->
+                                    <a *ngIf="isAdmin" class="nav-link">
+                                        <i class="fas fa-history"></i> Histórico
+                                    </a>
+                                </nav>
+                            </div>
+
+                        </div>
+                    </div>
+                </nav>
+            </div>
